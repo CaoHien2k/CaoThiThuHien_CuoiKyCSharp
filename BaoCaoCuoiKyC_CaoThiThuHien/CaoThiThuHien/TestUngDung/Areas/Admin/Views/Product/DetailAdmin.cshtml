@@ -1,0 +1,77 @@
+﻿@model ModelEF.Model.Product
+@using ModelEF.DAO
+@{
+    ViewBag.Title = "DetailAdmin";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section header
+{
+    @Model.Name
+}
+
+<div class="col-lg-12 form-group">
+    <table class="table">
+        <tr>
+            <th>
+                Hình Ảnh
+            </th>
+            <th>
+                Tên Sản Phẩm
+            </th>
+            <th>
+                Giá
+            </th>
+            <th>
+                Số lượng
+            </th>
+            <th>
+                Loại Sản Phẩm
+            </th>
+            <th>
+                Mô tả
+            </th>
+            <th>
+                Ngày tạo
+            </th>
+            <th>
+                Người tạo
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                <img src="@Url.Content("~/Image/" +Model.Image)" height="80" width="80" />
+            </td>
+            <td>
+                @Model.Name
+            </td>
+            <td>
+                @Model.UnitCost
+            </td>
+            <td>
+                @Model.Quantity
+            </td>
+            <td>
+                @(new CategoryDao().Find(@Model.TypeID).Name)
+            </td>
+            <td>
+                <ul>
+                    <li> Họa tiết:@Model.Description</li>
+                    <li>Màu sắc:@Model.Color</li>
+                    <li>Size:@Model.Size</li>
+                    <li>Thương hiệu:@Model.ThuongHieu</li>
+                </ul>   
+            </td>
+            <td>
+                @Model.CreateDate
+            </td>
+            <td>
+                @Model.CreateBy
+            </td>
+
+
+        </tr>
+    </table>
+
+</div>
+

@@ -1,0 +1,6 @@
+
+[Information] == [11/06/2021 09:51:35 PM]
+Category -- Create-Post
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TestUngDung.Areas.Admin.Controllers.ProductController.Update(Product model, HttpPostedFileBase image) in D:\BaiTapTruong\C#\Thi Cuoi Ky\CaoThiThuHien\TestUngDung\Areas\Admin\Controllers\ProductController.cs:line 73
+
